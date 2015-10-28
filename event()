@@ -1,0 +1,18 @@
+//  event() is a single-line JavaScript function that is called each time a media
+//  query event-listener is triggered. event() establishes which media query was
+//  involved, then passes control to a user-written JavaScript function to
+//  process the event.
+//
+function event(e) {
+  eval('px' + e.media.replace(/\D/g,'') + '(e.matches)')
+}
+//
+//  event() parses a JavaScript object returned to it by a media query.
+//  It extracts the event-listener breakpoint number from the object and
+//  immediately passes control to the relevant user-written JavaScript
+//  function, sending the object's true/false value as an input parameter.
+// 
+//  if a media query triggered a breakpoint at viewport pixel width 380, 
+//  event() will pass control to function px380(e). The input paramater
+//  e will be true or false, depending on whether the viewport was 
+//  increasing or decreasing in size. 
