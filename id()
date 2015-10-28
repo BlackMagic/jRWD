@@ -1,0 +1,7 @@
+//  id() is a single-line JavaScript function that locates a named HTML element
+//  in the DOM and returns a link to the element. The element's id is passed to
+//  the function as an input parameter.
+//
+function id(e) {
+   return document.getElementById(e);
+}
