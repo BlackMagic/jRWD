@@ -1,0 +1,21 @@
+//  The css() function gives the framework access to a web page's CSS stylesheets,
+//  allowing the framework to alter CSS rules in real-time. 
+//
+//  How does it work? A CSS rule selector is passed to the function. The function
+//  links up all of the web page's stylesheets and searches for the rule. If the rule
+//  is not found the function returns false; otherwise it returns a link to the rule.
+//
+function css(r) {
+  var i = 0, j, k, l, s, t, x; 
+  r = r.toLowerCase();
+  if(document.styleSheets) {
+    l = document.styleSheets.length;
+    for ( ; i<l; i++ ) {
+       s = document.styleSheets[i];
+       k = s.cssRules.length;
+       for ( j=0; j<k; j++ ) { 
+          s.cssRules? x = s.cssRules[j] : x = s.rules[j];
+          if (x.selectorText.toLowerCase() == r)
+             return x; } } }
+    return false;
+  }
