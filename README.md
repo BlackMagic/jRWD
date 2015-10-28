@@ -1,6 +1,4 @@
 # jRWD
-Lightweight Javascript framework for responsive web design
-
 jRWD is a lightweight, light-touch framework for implementing responsive web design.
 
 jRWD consists of two small JavaScript functions, totalling 12 lines of code,
