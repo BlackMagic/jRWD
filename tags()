@@ -1,0 +1,15 @@
+//  tags() is a small JavaScript function that manages collections of similar items.
+//  The function turns individual items on or off as required.
+//
+//  The function is not part of the jRWD framework. It is included as a utility
+//  function to manage collections of items such as menus, sprites and carousels.
+//
+function tags(t, e) {
+  var x = 0, y = document.getElementsByClassName(t), z = y.length;
+  for ( ; x<z; x++ ) {
+      id(y[x].id).off(); }
+  id(e.id).on();
+}
+// 
+//  tags() uses the id() function to turn off each item in the set, then uses id()
+//  to turn a nominated item on.
