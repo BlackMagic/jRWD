@@ -1,0 +1,25 @@
+//  setup() is the framework's primary function. It extends JavaScript's Object
+//  constructor to allow HTML elements to be switched on and off. It processes
+//  a set of browser breakpoints and sets up Javascript media queries for them.
+//  Then it adjusts the browser width to match the viewport of the viewing device.
+
+function setup(){
+Object.prototype.off = function() {this.style.display = 'none'};
+Object.prototype.on  = function() {this.style.display = ''};
+var w, x=1, y = [0], z = y.length;
+for( ; x < z; x++) {
+    w = window.matchMedia('(min-width:' + y[x] + 'px)');
+    w.addListener(event)}
+w = window.innerWidth;
+// user customisation code follows
+// set up the initial menu
+// user customisation ends
+for(--z; z; z--) {
+    x = y[z];
+    if( w <= x) {
+      eval('px'+x+'(false)') } } 
+// user customisation code follows      
+// set up initial screen values
+// unhide viewport css('.hide').style.margin=0;
+// user customisation ends
+}
