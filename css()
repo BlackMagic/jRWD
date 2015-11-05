@@ -5,16 +5,24 @@
 //  links up all of the web page's stylesheets and searches for the rule. If the rule
 //  is not found the function returns false; otherwise it returns a link to the rule.
 //
+//  Rules are held in upper case in Internet Explorer, hence the need to put all rules  
+//  into lowercase before comparing the target with a rule from the stylesheet.
+//
+//  css() can't see rules that begin with @, such as media queries or @keyframe rules.
+//  @rules return an undefined and are skipped over by css().
+
 function css(r) {
   var i = 0, j, k, l, s, t, x; 
   r = r.toLowerCase();
   if(document.styleSheets) {
     l = document.styleSheets.length;
-    for ( ; i<l; i++ ) {
+    for ( ; i < l; i++ ) {
        s = document.styleSheets[i];
        k = s.cssRules.length;
-       for ( j=0; j<k; j++ ) { 
+       for ( j = 0; j < k; j++ ) { 
           s.cssRules? x = s.cssRules[j] : x = s.rules[j];
+          if (x.selectorText === undefined)
+            continue; 
           if (x.selectorText.toLowerCase() == r)
              return x; } } }
     return false;
