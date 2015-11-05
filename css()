@@ -8,8 +8,8 @@
 //  Rules are held in upper case in Internet Explorer, hence the need to put all rules  
 //  into lower case before comparing the target with a rule from the stylesheet.
 //
-//  css() can't see rules that begin with @, such as media queries or @keyframe rules.
-//  @rules return an undefined and are skipped over by css().
+//  css() can't see rules that begin with @, such as @media queries or @keyframe rules.
+//  @rules return an undefined selectorText and are skipped over by css().
 
 function css(r) {
   var i = 0, j, k, l, s, t, x; 
