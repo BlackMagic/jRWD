@@ -12,3 +12,5 @@ accords with the original W3C Web Standards Model.
 
 jRWD is open source software, available under the MIT licence. It is compatible with 
 all modern browsers and most mobile devices.
+
+Documentation for jRWD is available at ieee-qld.org/jRWD/jRWD.pdf
